@@ -1,51 +1,59 @@
 Ticketing List
 
-A ticketing application for creating and managing tickets, with a separate frontend and backend.
+A full-stack ticket management app. Users can create tickets with a priority, view all tickets, update their status, and delete them.
 
+Tech Stack
+Frontend: React, Axios
+Backend: Node.js, Express, Mongoose
+Database: MongoDB
 Project Structure
 ticketinglist/
-├── frontend/   # User interface
-└── backend/    # Server and API
-Tech Stack
-Frontend: [e.g. React, HTML/CSS/JS]
-Backend: [e.g. Node.js/Express, Python/Flask]
-Database: [e.g. MongoDB, MySQL]
-Getting Started
+├── frontend/   # React app
+└── backend/    # Express API
+    ├── server.js
+    ├── model/Ticket.js
+    └── routes/TicketRoutes.js
 Prerequisites
-[Node.js 18+ / Python 3.8+]
-[Database, if required]
-Installation
+Node.js
+MongoDB running locally on mongodb://localhost:27017
+Getting Started
+
+Clone the repository:
+
 bash
 git clone https://github.com/SripadaError101/ticketinglist.git
 cd ticketinglist
 
-Backend
+Start the backend (runs on port 5000):
 
 bash
 cd backend
-npm install        # or: pip install -r requirements.txt
-npm start          # or: python app.py
+npm install
+node server.js
 
-Frontend
+Start the frontend (in a second terminal):
 
 bash
 cd frontend
 npm install
 npm start
-Environment Variables
 
-Create a .env file in backend/ with the values your setup needs, for example:
+The app opens at http://localhost:3000. The backend connects to the Ticketingissues database, which MongoDB creates automatically on first use.
 
-PORT=5000
-DATABASE_URL=your-database-url
+API
 
-Do not commit .env files.
+Base URL: http://localhost:5000/api/tickets
 
-Features
-Create tickets
-View the ticket list
-Update ticket status
-Delete tickets
-License
-
-Add your license here (e.g. MIT).
+Method	Endpoint	Description
+GET	/	Get all tickets
+POST	/	Create a ticket
+PATCH	/:id	Update a ticket (e.g. status)
+DELETE	/:id	Delete a ticket
+Ticket Model
+Field	Type	Default
+title	String	
+description	String	
+createdBy	String	
+priority	String (Low, Medium, High)	Low
+status	String	Open
+createdAt	Date	Now
