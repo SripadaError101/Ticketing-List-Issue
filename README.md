@@ -7,12 +7,19 @@ Frontend: React, Axios
 Backend: Node.js, Express, Mongoose
 Database: MongoDB
 Project Structure
+
 ticketinglist/
+
 ├── frontend/   # React app
+
 └── backend/    # Express API
+
     ├── server.js
+    
     ├── model/Ticket.js
+    
     └── routes/TicketRoutes.js
+
 Prerequisites
 Node.js
 MongoDB running locally on mongodb://localhost:27017
